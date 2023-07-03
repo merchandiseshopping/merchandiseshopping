@@ -38,9 +38,11 @@ const productSchema={
     productid:Number,
     productName:String,
     productDescription:String,
-    productPrice:String,
-    productsize:Number,
-    productImage:String,
+    productPrice:String, 
+    productsize:String,
+    productImage1:String,
+    productImage2:String,
+    productImage3:String,
     keywords:String
 }
 
@@ -52,7 +54,7 @@ const cartSchema={
     productDescription:String,
     productPrice:String,
     productsize:Number,
-    productImage:String,
+    productImage1:String,
     keywords:String
 }
 
@@ -179,7 +181,9 @@ app.post("/addproducts",async(req,res)=>{
         productDescription:req.body.productDescription,
         productPrice:req.body.productPrice,
         productsize:req.body.productsize,
-        productImage:req.body.productImage,
+        productImage1:req.body.productImage1,
+        productImage2:req.body.productImage2,
+        productImage3:req.body.productImage3,
         keywords:req.body.keywords,
     })
 
@@ -261,7 +265,7 @@ app.post("/addtocart",function(req,res){
                 productName:resp.productName,
                 productDescription:resp.productDescription,
                 productPrice:resp.productPrice,
-                productImage:resp.productImage,
+                productImage1:resp.productImage1,
                 productsize:resp.productsize,
                 keyword:resp.keyword
             })
